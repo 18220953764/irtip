@@ -1,0 +1,5 @@
+###配置eureka 注册中心位置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka
