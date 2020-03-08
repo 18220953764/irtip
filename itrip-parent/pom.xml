@@ -18,12 +18,12 @@
     <!--配置使用Spring boot starter Parent 作为项目父级依赖[end]-->
 
     <dependencies>
-        <!-- 配置Spring Boot Starter Wwb 依赖关系[begin]-->
+        <!-- 配置Spring Boot Starter Web 依赖关系[begin]-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!-- 配置Spring Boot Starter Wwb 依赖关系[begin]-->
+        <!-- 配置Spring Boot Starter Web 依赖关系[begin]-->
     </dependencies>
 
     <dependencyManagement>

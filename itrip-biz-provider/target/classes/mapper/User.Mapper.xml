@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whackon.itrip.dao.UserDao">
+	<select id="findListByQuery" parameterType="User" resultMap="userMap">
+		select
+		iu.id,
+		iu.userCode,
+		iu.userPassword,
+		iu.userType,
+		iu.flatID,
+		iu.userName,
+		iu.weChat,
+		iu.QQ,
+		iu.weibo,
+		iu.baidu,
+		iu.creationDate,
+		iu.createdBy,
+		iu.modifyDate,
+		iu.modifiedBy,
+		iu.activated
+		from
+		itrip_user iu
+		<where>
+			<trim suffixOverrides="and">
+				<if test="id != null">iu.id=#{id} and </if>
+				<if test="userCode != null">iu.userCode=#{userCode} and </if>
+			</trim>
+		</where>
+	</select>
+
+	<insert id="saveUser" parameterType="User">
+		insert into itrip_user(
+		<trim suffixOverrides=",">
+			<if test="userCode != null">userCode, </if>
+			<if test="userPassword != null">userPassword, </if>
+			<if test="userType != null">userType, </if>
+			<if test="flatID != null">flatID, </if>
+			<if test="userName != null">userName, </if>
+			<if test="weChat != null">weChat, </if>
+			<if test="QQ != null">QQ, </if>
+			<if test="weibo != null">weibo, </if>
+			<if test="baidu != null">baidu, </if>
+			<if test="creationDate != null">creationDate, </if>
+			<if test="createdBy != null">createdBy, </if>
+			<if test="modifyDate != null">modifyDate, </if>
+			<if test="modifiedBy != null">modifiedBy, </if>
+			<if test="activated != null">activated, </if>
+		</trim>
+		) values(
+		<trim suffixOverrides=",">
+			<if test="userCode != null">#{userCode}, </if>
+			<if test="userPassword != null">#{userPassword}, </if>
+			<if test="userType != null">#{userType}, </if>
+			<if test="flatID != null">#{flatID}, </if>
+			<if test="userName != null">#{userName}, </if>
+			<if test="weChat != null">#{weChat}, </if>
+			<if test="QQ != null">#{QQ}, </if>
+			<if test="weibo != null">#{weibo}, </if>
+			<if test="baidu != null">#{baidu}, </if>
+			<if test="creationDate != null">#{creationDate}, </if>
+			<if test="createdBy != null">#{createdBy}, </if>
+			<if test="modifyDate != null">#{modifyDate}, </if>
+			<if test="modifiedBy != null">#{modifiedBy}, </if>
+			<if test="activated != null">#{activated}, </if>
+		</trim>
+		)
+	</insert>
+
+	<resultMap id="userMap" type="User">
+		<id property="id" javaType="java.lang.Long" column="id"/>
+		<result property="userCode" javaType="java.lang.String" column="userCode"/>
+		<result property="userPassword" javaType="java.lang.String" column="userPassword"/>
+		<result property="userType" javaType="java.lang.Integer" column="userType"/>
+		<result property="flatID" javaType="java.lang.Long" column="flatID"/>
+		<result property="userName" javaType="java.lang.String" column="userName"/>
+		<result property="weChat" javaType="java.lang.String" column="weChat"/>
+		<result property="QQ" javaType="java.lang.String" column="QQ"/>
+		<result property="weibo" javaType="java.lang.String" column="weibo"/>
+		<result property="baidu" javaType="java.lang.String" column="baidu"/>
+		<result property="creationDate" javaType="java.util.Date" column="creationDate"/>
+		<result property="createdBy" javaType="java.lang.String" column="createdBy"/>
+		<result property="modifyDate" javaType="java.util.Date" column="modifyDate"/>
+		<result property="modifiedBy" javaType="java.lang.Long" column="modifiedBy"/>
+		<result property="activated" javaType="java.lang.Integer" column="activated"/>
+	</resultMap>
+</mapper>

@@ -1,0 +1,6 @@
+### 启动端口号
+server:
+  port: 22222
+spring:
+  application:
+    name: itrip-auth-consumer

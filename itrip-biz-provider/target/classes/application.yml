@@ -1,0 +1,4 @@
+### 配置激活的配置文件后缀
+spring:
+  profiles:
+    active: dev, eureka-client, data, redis, mail

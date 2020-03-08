@@ -1,0 +1,7 @@
+### 配置启动端口号
+server:
+  port: 33333
+### 配置项目应用名
+spring:
+  application:
+    name: itrip-biz-provider

@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.whackon.itrip</groupId>
-    <artifactId>itrip-commons</artifactId>
+    <artifactId>itrip--provider-commons</artifactId>
     <packaging>jar</packaging>
 
     <!--配置父级依赖项目 itrip-parent[begin]-->
@@ -23,35 +23,49 @@
     </properties>
 
     <dependencies>
-
-        <!--配置 Spring Cloud Eureka Client 依赖关系[begin]-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-        <!--配置 Spring Cloud Eureka Client 依赖关系[end]-->
-
-        <!--配置 Spring Cloud OpenFeign 依赖关系[begin]-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
-        <!--配置 Spring Cloud OpenFeign 依赖关系[end]-->
-
-        <!-- 配置 Spring Boot Starter Mail 依赖关系 [BEGIN] -->
+        <!--配置Spring boot Starter jdbc 依赖关系[begin]-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-mail</artifactId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
-        <!-- 配置 Spring Boot Starter Mail 依赖关系 [END] -->
+        <!--配置Spring boot Starter jdbc 依赖关系[end]-->
 
+        <!--配置MySQL数据库连接依赖关系[begin]-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <!--配置MySQL数据库连接依赖关系[end]-->
 
+        <!-- 配置Mybatis Spring Boot Starter 依赖关系[begin] -->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.1.1</version>
+        </dependency>
+        <!-- 配置Mybatis Spring Boot Starter 依赖关系[end] -->
 
+        <!--配置durid spring boot starter 依赖关系[begin]-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>1.1.21</version>
+        </dependency>
+        <!--配置durid spring boot starter 依赖关系[begin]-->
+
+        <!--配置durid spring boot starter-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- 配置 Spring Boot Starter Redis 依赖关系 [BEGIN] -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <!-- 配置 Spring Boot Starter Redis 依赖关系 [END] -->
     </dependencies>
 
     <build>
