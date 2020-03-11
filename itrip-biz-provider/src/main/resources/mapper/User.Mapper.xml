@@ -67,6 +67,34 @@
 		)
 	</insert>
 
+	<update id="updateUser" parameterType="User">
+		update itrip_user
+		<set>
+			<trim suffixOverrides=",">
+				<if test="userCode != null">userCode=#{userCode}, </if>
+				<if test="userPassword != null">userPassword=#{userPassword}, </if>
+				<if test="userType != null">userType=#{userType}, </if>
+				<if test="flatID != null">flatID=#{flatID}, </if>
+				<if test="userName != null">userName=#{userName}, </if>
+				<if test="weChat != null">weChat=#{weChat}, </if>
+				<if test="QQ != null">QQ=#{QQ}, </if>
+				<if test="weibo != null">weibo=#{weibo}, </if>
+				<if test="baidu != null">baidu=#{baidu}, </if>
+				<if test="creationDate != null">creationDate=#{creationDate}, </if>
+				<if test="createdBy != null">createdBy=#{createdBy}, </if>
+				<if test="modifyDate != null">modifyDate=#{modifyDate}, </if>
+				<if test="modifiedBy != null">modifiedBy=#{modifiedBy}, </if>
+				<if test="activated != null">activated=#{activated}, </if>
+			</trim>
+		</set>
+		<where>
+			<trim suffixOverrides="and">
+				<if test="id != null">id=#{id} and </if>
+				<if test="userCode != null">userCode=#{userCode} and </if>
+			</trim>
+		</where>
+	</update>
+
 	<resultMap id="userMap" type="User">
 		<id property="id" javaType="java.lang.Long" column="id"/>
 		<result property="userCode" javaType="java.lang.String" column="userCode"/>

@@ -1,3 +1,6 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
 ### 配置 Eureka 注册中心位置
 eureka:
   client:

@@ -1,0 +1,1 @@
+mvn install:install-file -Dfile=C:\Users\38930\Desktop\工作\工具\容联云jar\ccp_rest_sdk-2.7.jar -DgroupId=com.cloopen -DartifactId=ccp_rest_sdk -Dversion=2.7 -Dpackaging=jar

@@ -1,0 +1,6 @@
+### 启动端口号
+server:
+  port: 44444
+spring:
+  application:
+    name: itrip-biz-consumer

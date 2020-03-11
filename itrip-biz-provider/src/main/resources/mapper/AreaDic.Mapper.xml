@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.whackon.itrip.dao.AreaDicDao">
+	<select id="findListByQuery" parameterType="AreaDic" resultMap="areaDicMap">
+		select
+			iad.id,
+			iad.name,
+			iad.areaNo,
+			iad.parent,
+			iad.isActivated,
+			iad.isTradingArea,
+			iad.isHot,
+			iad.level,
+			iad.isChina,
+			iad.pinyin,
+			iad.creationDate,
+			iad.createdBy,
+			iad.modifyDate,
+			iad.modifiedBy
+		from
+			itrip_area_dic iad
+		<where>
+			<trim suffixOverrides="and">
+				<if test="id != null">iad.id=#{id} and </if>
+				<if test="name != null">iad.name=#{name} and </if>
+				<if test="areaNo != null">iad.areaNo=#{areaNo} and </if>
+				<if test="parent != null">iad.parent=#{parent} and </if>
+				<if test="isActivated != null">iad.isActivated=#{isActivated} and </if>
+				<if test="isTradingArea != null">iad.isTradingArea=#{isTradingArea} and </if>
+				<if test="isHot != null">iad.isHot=#{isHot} and </if>
+				<if test="level != null">iad.level=#{level} and </if>
+				<if test="isChina != null">iad.isChina=#{isChina} and </if>
+				<if test="pinyin != null">iad.pinyin=#{pinyin} and </if>
+			</trim>
+		</where>
+	</select>
+
+	<resultMap id="areaDicMap" type="AreaDic">
+		<id property="id" javaType="java.lang.Long" column="id"/>
+		<result property="name" javaType="java.lang.String" column="name"/>
+		<result property="areaNo" javaType="java.lang.String" column="areaNo"/>
+		<result property="parent" javaType="java.lang.Long" column="parent"/>
+		<result property="isActivated" javaType="java.lang.Integer" column="isActivated"/>
+		<result property="isTradingArea" javaType="java.lang.Integer" column="isTradingArea"/>
+		<result property="isHot" javaType="java.lang.Integer" column="isHot"/>
+		<result property="level" javaType="java.lang.Integer" column="level"/>
+		<result property="isChina" javaType="java.lang.Integer" column="isChina"/>
+		<result property="pinyin" javaType="java.lang.String" column="pinyin"/>
+		<result property="creationDate" javaType="java.util.Date" column="creationDate"/>
+		<result property="createdBy" javaType="java.lang.Long" column="createdBy"/>
+		<result property="modifyDate" javaType="java.util.Date" column="modifyDate"/>
+		<result property="modifiedBy" javaType="java.lang.Long" column="modifiedBy"/>
+	</resultMap>
+</mapper>

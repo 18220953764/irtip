@@ -1,0 +1,4 @@
+### 配置所使用的配置文件后缀
+spring:
+  profiles:
+    active: dev,eureka-client,mail

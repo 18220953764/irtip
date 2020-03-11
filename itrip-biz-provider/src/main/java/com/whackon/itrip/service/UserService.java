@@ -24,4 +24,10 @@ public interface UserService {
 	 * 保存用户信息
 	 */
 	boolean saveUser(User user) throws Exception;
+
+	//通过userCode在redis中查询对应的激活码
+	String getActiveCodeByUserCode(String userCode) throws Exception;
+
+	//修改数据库用户激活状态
+	boolean updateUser(User user) throws Exception;
 }

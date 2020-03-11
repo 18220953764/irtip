@@ -16,4 +16,7 @@ public interface UserDao {
 	List<User> findListByQuery(User query) throws Exception;
 	//保存用户信息
 	int saveUser(User user) throws Exception;
+
+	//修改用户信息
+	int updateUser(User user) throws Exception;
 }

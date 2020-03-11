@@ -5,6 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -25,7 +26,31 @@ public interface UserTransport {
 	 */
 	@PostMapping(value = "/list")
 	List<User> getListByQuery(@RequestBody User query) throws Exception;
-	//保存用户信息
+
+	/**
+	 * <b>保存用户信息</b>
+	 * @param user
+	 * @return
+	 * @throws Exception
+	 */
 	@PostMapping(value = "/save")
 	boolean saveUser(@RequestBody User user) throws Exception;
+
+	/**
+	 * <b>通过userCode在Redis中查询对应的激活码</b>
+	 * @param userCode
+	 * @return
+	 * @throws Exception
+	 */
+	@PostMapping(value = "/activeCode")
+	String getActiveCodeByUserCode(@RequestParam String userCode) throws Exception;
+
+	/**
+	 * <b>修改用户信息</b>
+	 * @param user
+	 * @return
+	 * @throws Exception
+	 */
+	@PostMapping(value = "/updateUser")
+	boolean updateUser(@RequestBody User user) throws Exception;
 }
